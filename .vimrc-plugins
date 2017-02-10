@@ -51,6 +51,10 @@ nnoremap K {
 vnoremap J }
 vnoremap K {
 nnoremap <space>bd :w<CR> :bd<CR>
+nnoremap <c-L> <c-W>l
+nnoremap <c-S> <c-W>h
+silent !stty -ixon
+autocmd VimLeave * silent !stty ixon
 
 "git stuff
 nnoremap <space>ga :Git add %:p<CR><CR>

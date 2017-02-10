@@ -1,0 +1,74 @@
+set nocompatible
+set backspace=indent,eol,start
+set showcmd
+
+syntax on
+
+set t_Co=256
+
+set grepprg=grep\ -nH\ $*
+
+"set nowrap
+set tabstop=4
+set autoindent
+set copyindent
+set number
+set shiftwidth=4
+set shiftround
+set showmatch
+set ignorecase
+set smartcase
+set expandtab
+set smarttab
+set hlsearch
+
+set wildmenu
+set wildmode=list:longest,full
+set mouse=a "for people that need to use my editor
+
+set history=1000
+set undolevels=1000
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title
+set visualbell
+set noerrorbells
+
+set nobackup
+set noswapfile
+
+set pastetoggle=<F2>
+set nohidden
+
+"navigation mapping
+inoremap jj <Esc>
+inoremap kk <Esc>
+inoremap JJ <Esc>
+inoremap KK <Esc>
+nnoremap J }
+nnoremap K {
+vnoremap J }
+vnoremap K {
+nnoremap <space>bd :w<CR> :bd<CR>
+nnoremap <c-L> <c-W>l
+nnoremap <c-S> <c-W>h
+silent !stty -ixon
+autocmd VimLeave * silent !stty ixon
+
+nmap <silent> ,/ :nohlsearch<CR>
+
+au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+"For markdown
+autocmd BufRead,BufNew *.md set filetype=markdown
+
+"Syntax highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
+"white space trimmer
+autocmd BufWritePre * :%s/\s\+$//e
+
+"crosshairs
+hi CursorColumn cterm=bold ctermbg=none
+hi CursorLine cterm=bold ctermbg=none
+set cursorline
+set cursorcolumn
