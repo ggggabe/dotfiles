@@ -32,7 +32,7 @@ set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
-set visualbell
+set novisualbell
 set noerrorbells
 
 set nobackup
